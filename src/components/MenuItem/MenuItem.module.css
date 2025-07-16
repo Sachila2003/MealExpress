@@ -1,0 +1,87 @@
+.menuItem {
+    background-color: white;
+    padding: 1.5rem 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    transition: transform 0.2s ease-in-out;
+}
+
+.menuItem:hover {
+    transform: translateY(-5px);
+}
+
+.itemDetails {
+    flex-grow: 1;
+}
+
+.itemName {
+    font-size: 1.5rem;
+    color: var(--text-color-dark);
+}
+
+.itemDescription {
+    color: #666;
+    margin-top: 0.25rem;
+}
+
+.itemActions {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-shrink: 0;
+    margin-left: 2rem;
+}
+
+.itemPrice {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-color-dark);
+}
+
+.addButton {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.addButton:hover {
+    background-color: var(--secondary-color);
+}
+
+.toppings {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1rem;
+}
+
+.toppings h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.checkboxLabel {
+    font-size: 0.9rem;
+    color: #444;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.checkboxLabel input {
+    margin-right: 0.5rem;
+    width: 16px;
+    height: 16px;
+    accent-color: var(--primary-color);
+}

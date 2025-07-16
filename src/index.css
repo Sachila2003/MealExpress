@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+  --primary-color: #e74c3c; /* A nice, vibrant red/orange */
+  --secondary-color: #f39c12; /* A secondary accent color (yellow/orange) */
+  --text-color-dark: #2c3e50;  /* A dark, soft black for text */
+  --text-color-light: #ecf0f1; /* Light color for text on dark backgrounds */
+  --bg-color-light: #fdfdfd;   /* The main light background */
+  --border-color: #e0e0e0;     /* A light grey for borders */
+
+  --font-heading: 'Lora', serif;
+  --font-body: 'Poppins', sans-serif;
+
+  --container-width: 1200px; /* Max width for content */
+  --border-radius: 8px;      /* Rounded corners for cards, buttons */
+}
+
+/* 3. Basic Resets and Body Styling */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body); /* Set the default font for the whole app */
+  background-color: var(--bg-color-light);
+  color: var(--text-color-dark);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading); /* Set the heading font */
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* A helper class we can use anywhere */
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
