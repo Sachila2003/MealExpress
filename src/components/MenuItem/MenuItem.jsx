@@ -2,10 +2,13 @@ import React, { useState } from 'react';
 import styles from './MenuItem.module.css';
 
 import { createFoodItem } from '../../patterns/FoodFactory.js';
-import shoppingCart from '../../patterns/singletonCart.js'; 
+import shoppingCart from '../../patterns/SingletonCart.js'; 
+import { useCart } from '../../context/CardContext';
 
 const MenuItem = ({ item }) => {
   const [selectedToppings, setSelectedToppings] = useState({});
+
+  const { addItemToCart } = useCart();
 
   const handleCheckboxChange = (toppingName) => {
     setSelectedToppings(prevState => ({
@@ -28,7 +31,7 @@ const MenuItem = ({ item }) => {
       });
     }
 
-    shoppingCart.addItem(foodItem);
+    addItemToCart(foodItem);
     alert(`"${foodItem.getDescription()}" was added to your cart!`);
     
     console.log('--- Current Cart State ---');

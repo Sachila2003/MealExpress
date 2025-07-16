@@ -1,9 +1,10 @@
 import React from 'react';
 import styles from './Navbar.module.css';
 import { FaShoppingCart } from 'react-icons/fa';
+import { useCart } from '../../context/CardContext';
 
 const Navbar = () => {
-  const cartItemCount = 0;
+  const { cartCount } = useCart();
 
   return (
     <nav className={styles.navbar}>
@@ -22,8 +23,8 @@ const Navbar = () => {
           <li className={styles.cartIconWrapper}>
             <a href="#">
               <FaShoppingCart size={24} />
-              {cartItemCount > 0 && (
-                <span className={styles.cartBadge}>{cartItemCount}</span>
+              {cartCount > 0 && (
+                <span className={styles.cartBadge}>{cartCount}</span>
               )}
             </a>
           </li>
