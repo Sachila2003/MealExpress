@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { useCart } from '../../context/CardContext';
+import { useOrders } from '../../context/OrderContext';
 import styles from './CheckoutPage.module.css';
 import { FaTrashAlt, FaTags, FaPaperPlane } from 'react-icons/fa';
 
@@ -17,10 +18,11 @@ const promoCodeStategies = {
 
 const CheckoutPage = () => {
     const { cartItems, cartTotal, removeItemFromCart, cartCount, clearCart } = useCart();
-
+    const { addOrder } = useOrders();
     //promo code input and calculate descount
     const [promocode, setPromocode] = useState('');
     const [discount, setDiscount] = useState(0);
+    
 
     //final total
 
@@ -48,6 +50,12 @@ const CheckoutPage = () => {
         const success = orderFacade.placeOrder(finalTotal);
 
         if (success) {
+            addOrder({
+                items: cartItems,
+                total: finalTotal,
+                status: 'Confirmed',
+                placedAt: new Date()
+            });
             alert('Your order has been placed successfully!');
             clearCart();
         } else {

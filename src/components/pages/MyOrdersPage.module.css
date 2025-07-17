@@ -1,0 +1,9 @@
+.ordersPage {
+    padding: 4rem 0;
+    min-height: 70vh;
+}
+
+.ordersPage h1 {
+    text-align: center;
+    margin-bottom: 3rem;
+}

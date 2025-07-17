@@ -1,0 +1,51 @@
+.orderCard {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .06);
+    margin-bottom: 1.5rem
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+    margin-bottom: 1rem
+}
+
+.header h4 {
+    margin: 0
+}
+
+.status {
+    padding: .4rem .8rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: .8rem;
+    color: white;
+    text-transform: uppercase
+}
+
+.confirmed {
+    background-color: #3498db
+}
+
+.cooking {
+    background-color: #f39c12
+}
+
+.outfordelivery {
+    background-color: #9b59b6
+}
+
+.delivered {
+    background-color: #2ecc71
+}
+
+.body ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: .5rem
+}

@@ -1,5 +1,12 @@
 import React from 'react';
+import FeaturedRestaurants from '../FeaturedRestaurants/FeaturedRestaurants';
 
-const RestaurantsPage = () => <div className="container" style={{padding: '5rem 0'}}><h1>All Restaurants</h1></div>;
+const RestaurantsPage = () => {
+    return (
+        <div>
+            <FeaturedRestaurants />
+        </div>
+    );
+};
 
 export default RestaurantsPage;
