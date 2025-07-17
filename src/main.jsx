@@ -11,6 +11,9 @@ import HomePage from './components/pages/HomePage.jsx';
 import MenuPage from './components/pages/MenuPage.jsx';
 import CheckoutPage from './components/pages/CheckoutPage.jsx';
 
+import RestaurantsPage from './components/pages/RestaurantsPage.jsx';
+import MyOrdersPage from './components/pages/MyOrdersPage.jsx';
+
 // Import the CartProvider
 import { CartProvider } from './context/CardContext.jsx';
 
@@ -22,8 +25,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <App> 
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/restaurants" element={<RestaurantsPage />} />
             <Route path="/restaurant/:id" element={<MenuPage />} />
             <Route path="/checkout" element={<CheckoutPage />} />
+            <Route path="/my-orders" element={<MyOrdersPage />} />
           </Routes>
         </App>
       </BrowserRouter>

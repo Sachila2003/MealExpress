@@ -3,6 +3,8 @@ import styles from './Navbar.module.css';
 import { FaShoppingCart } from 'react-icons/fa';
 import { useCart } from '../../context/CardContext';
 
+import {Link, NavLink} from 'react-router-dom';
+
 const Navbar = () => {
   const { cartCount } = useCart();
 
@@ -10,23 +12,23 @@ const Navbar = () => {
     <nav className={styles.navbar}>
       <div className={`${styles.navContainer} container`}>
         <ul className={styles.navLinks}>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Restaurants</a></li>
+          <li><NavLink to="/" className={({isActive}) => isActive ? styles.activeLink: ''}>Home</NavLink></li>
+          <li><NavLink to="/restaurants" className={({isActive}) => isActive ? styles.activeLink: ''}>Restaurants</NavLink></li>
         </ul>
 
         <div className={styles.logo}>
-          <a href="#">MealExpress</a>
+          <NavLink to="/">MealExpress</NavLink>
         </div>
 
         <ul className={styles.navLinks}>
-          <li><a href="#">My Orders</a></li>
+          <li><NavLink to="/my-orders" className={({isActive}) => isActive ? styles.activeLink: ''}>My Orders</NavLink></li>
           <li className={styles.cartIconWrapper}>
-            <a href="#">
+            <NavLink to="/checkout">
               <FaShoppingCart size={24} />
               {cartCount > 0 && (
                 <span className={styles.cartBadge}>{cartCount}</span>
               )}
-            </a>
+            </NavLink>
           </li>
         </ul>
       </div>

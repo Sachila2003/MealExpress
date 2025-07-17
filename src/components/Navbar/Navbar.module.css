@@ -58,6 +58,13 @@
   .navLinks a:hover::after {
     width: 100%;
   }
+  .navLinks .activeLink {
+    color: var(--primary-color);
+  }
+  
+  .navLinks .activeLink::after {
+    width: 100%;
+  }
   
   .cartIconWrapper {
     position: relative;

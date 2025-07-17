@@ -1,4 +1,4 @@
-import ShoppingCart from "./singletonCart";
+import ShoppingCart from "./SingletonCart";
 import {OrderStatus, kitchenNotifier, userNotifier} from "./OrderObserver";
 
 const PaymentSystem = {
@@ -16,7 +16,7 @@ const InventorySystem = {
 };
 
 export class OrderFacade {
-    placeOrder() {
+    placeOrder(finalTotal) {
         console.log("\--FACEDE: Starting order placement process ---");
 
         const items = ShoppingCart.getItems();
@@ -27,7 +27,7 @@ export class OrderFacade {
             return false;
         }
 
-        const paymentSuccessfull = PaymentSystem.processPayment(total);
+        const paymentSuccessfull = PaymentSystem.processPayment(finalTotal);
         if (!paymentSuccessfull) {
             console.log("Facade Error: Payment failed. Order placement cancelled.");
             return false;
